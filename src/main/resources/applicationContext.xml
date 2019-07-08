@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:c="http://www.springframework.org/schema/c"
+       xmlns:p="http://www.springframework.org/schema/p" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
+
+    <!-- CD -->
+    <!--<bean id="cd" class="com.nomad.SgtPeppers"/>-->
+
+    <!--<bean id="cd" class="com.nomad.BlankDisk">
+        <constructor-arg value="标题"/>
+        <constructor-arg value="内容"/>
+&lt;!&ndash;        <constructor-arg><null/></constructor-arg>&ndash;&gt;
+        <constructor-arg >
+            <list>  &lt;!&ndash;<set></set>&ndash;&gt;
+                <value>第一个</value>
+                <value>第二个</value>
+                <value>第三个</value>
+                <value>第四个</value>
+                <value>第五个</value>
+                <value>第六个</value>
+            </list>
+        </constructor-arg>
+    </bean>-->
+
+<!--    <bean id="cd" class="com.nomad.BlankDisk" c:_0="标题" c:_1="内容"/>-->
+<!--    <bean id="cd" class="com.nomad.BlankDisk" c:title="标题" c:content="内容"/>-->
+
+    <!--<bean id="cd" class="com.nomad.BlankDisk" p:title="标题" p:content="内容">
+        <property name="tracks">
+            <set>
+                <value>第一个</value>
+                <value>第二个</value>
+                <value>第三个</value>
+                <value>第四个</value>
+                <value>第五个</value>
+            </set>
+        </property>
+    </bean>-->
+
+    <!--<util:list id="trackList">
+        <value>第一个</value>
+        <value>第二个</value>
+        <value>第三个</value>
+        <value>第四个</value>
+        <value>第五个</value>
+    </util:list>
+    <bean id="cd" class="com.nomad.BlankDisk" p:title="标题" p:content="内容" p:tracks-ref="trackList"/>-->
+
+<!--    <bean class="com.nomad.CDConfig"/>-->
+
+
+    <!-- CDPlayer -->
+    <!-- <bean id="cdPlayer" class="com.nomad.CDPlayer">
+        <constructor-arg ref="cd"/>
+     </bean>-->
+
+    <!--    <bean id="cdPlayer" class="com.nomad.CDPlayer" c:cd-ref="cd" />-->
+<!--    <bean id="cdPlayer" class="com.nomad.CDPlayer" c:_0-ref="cd" />-->
+    <!--    <bean id="cdPlayer" class="com.nomad.CDPlayer" c:_-ref="cd" />  -->
+
+    <!--<bean id="cdPlayer" class="com.nomad.CDPlayer">
+        <property name="cd" ref="cd"/>
+    </bean>-->
+
+    <bean id="cdPlayer" class="com.nomad.CDPlayer" p:cd-ref="cd"/>
+
+</beans>

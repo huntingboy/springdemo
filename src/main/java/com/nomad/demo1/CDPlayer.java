@@ -1,7 +1,6 @@
-package com.nomad;
+package com.nomad.demo1;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
 import javax.inject.Inject;
 import javax.inject.Named;

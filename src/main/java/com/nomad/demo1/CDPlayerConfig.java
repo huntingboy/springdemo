@@ -1,9 +1,7 @@
-package com.nomad;
+package com.nomad.demo1;
 
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Import;
 
 @Configuration
 //@ComponentScan(basePackages = {"com.nomad", "com.hello", "com.world"})

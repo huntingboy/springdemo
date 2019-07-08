@@ -1,6 +1,4 @@
-package com.nomad;
-
-import org.springframework.stereotype.Component;
+package com.nomad.demo1;
 
 //@Component("cd")  //@Named
 public class SgtPeppers implements CompactDisc {

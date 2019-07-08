@@ -1,7 +1,7 @@
-package com.nomad;
+package com.nomad.demo1;
 
-public class WhiteAlbum implements CompactDisc {
-    private String title = "WhiteAlbum";
+public class Revolver implements CompactDisc {
+    private String title = "Revolver";
     private String content = "content:helloworld!!!";
 
     public void play() {

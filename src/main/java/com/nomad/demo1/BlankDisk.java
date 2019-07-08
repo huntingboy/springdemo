@@ -1,4 +1,4 @@
-package com.nomad;
+package com.nomad.demo1;
 
 import java.util.List;
 

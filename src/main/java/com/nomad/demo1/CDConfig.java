@@ -1,4 +1,4 @@
-package com.nomad;
+package com.nomad.demo1;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

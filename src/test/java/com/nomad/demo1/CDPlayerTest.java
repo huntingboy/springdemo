@@ -24,7 +24,8 @@ import static org.junit.Assert.assertNotNull;
 //@ContextConfiguration("classpath:dataSource.xml")
 //@ActiveProfiles("dev")
 //@ContextConfiguration(classes = MagicBeanConfig.class)
-@ContextConfiguration(classes = FoodConfig.class)
+//@ContextConfiguration(classes = FoodConfig.class)
+@ContextConfiguration(classes = ScopeConfig.class)
 public class CDPlayerTest<standardoutputs> {
 
     //第二章测试代码
@@ -66,12 +67,24 @@ public class CDPlayerTest<standardoutputs> {
         assertNotNull(mb);
     }*/
 
-    @Autowired
+    /*@Autowired
     private Food food;
 
     @Test
     public void dessertNotBeNull() {
         assertNotNull(food);
         food.getDessert();
+    }*/
+
+    @Autowired
+    private NotePad notePad;
+
+    @Autowired
+    private StoreService storeService;
+
+    @Test
+    public void notePadNotBeNull(){
+        assertNotNull(notePad);
+        assertNotNull(storeService);
     }
 }

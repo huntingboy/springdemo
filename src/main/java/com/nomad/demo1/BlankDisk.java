@@ -1,5 +1,7 @@
 package com.nomad.demo1;
 
+import org.springframework.beans.factory.annotation.Value;
+
 import java.util.List;
 
 public class BlankDisk implements CompactDisc {
@@ -7,6 +9,24 @@ public class BlankDisk implements CompactDisc {
     private String content;
     private List<String> tracks;
 
+    /*public BlankDisk(String title, String content) {  //ExpressiveConfig中使用environment
+        this.title = title;
+        this.content = content;
+    }*/
+
+    public BlankDisk(  //使用占位符,需配置PropertySourcePlaceholderConfigurer
+            @Value("${disc.title}") String title,
+            @Value("${disc.content}") String content) {
+        this.title = title;
+        this.content = content;
+    }
+
+    /*public BlankDisk(  //使用SpEL spring EL表达式
+            @Value("#{disc.title}") String title,
+            @Value("#{disc.content}") String content) {
+        this.title = title;
+        this.content = content;
+    }*/
 
     public BlankDisk(String title, String content, List<String> tracks) {
         this.title = title;

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <context:component-scan base-package="com.nomad.demo3"/>
+
+    <aop:aspectj-autoproxy/>
+
+    <bean class="com.nomad.demo3.Audience"/>
+
+
+    <aop:config>
+        <aop:aspect ref="audience">
+            <!--<aop:before method="silenceCellPhones"
+                        pointcut="execution(* com.nomad.demo3.Performance.perform(..))"/>
+            <aop:before method="takeSeats"
+                        pointcut="execution(* com.nomad.demo3.Performance.perform(..))"/>
+            <aop:after-returning method="applause"
+                                 pointcut="execution(* com.nomad.demo3.Performance.perform(..))"/>
+            <aop:after-throwing method="demandRefund"
+                                pointcut="execution(* com.nomad.demo3.Performance.perform(..))"/>-->
+
+
+            <aop:pointcut id="performance" expression="execution(* com.nomad.demo3.Performance.perform(..))"/>
+            <aop:before method="silenceCellPhones"
+                        pointcut-ref="performance"/>
+            <aop:before method="takeSeats"
+                        pointcut-ref="performance"/>
+            <aop:after-returning method="applause"
+                                 pointcut-ref="performance"/>
+            <aop:after-throwing method="demandRefund"
+                                pointcut-ref="performance"/>
+
+
+            <aop:around method="watchPerformance"
+                        pointcut-ref="performance"/>
+        </aop:aspect>
+
+        <aop:aspect ref="encoreableIntroducer">
+            <aop:declare-parents types-matching="com.nomad.demo3.Performance+"
+                                 implement-interface="com.nomad.demo3.Encoreable"
+                                  default-impl="com.nomad.demo3.DefaultEncoreable"/>
+        </aop:aspect>
+
+    </aop:config>
+
+</beans>

@@ -23,10 +23,10 @@ public class CDPlayer implements MediaPlayer {
         cd.play();
     }
 
-//    @Autowired
-//    public void insertDisc(CompactDisc cd) {
-//        this.cd = cd;
-//    }
+    @Autowired
+    public void insertDisc(CompactDisc cd) {
+        this.cd = cd;
+    }
 
     @Autowired
     public void setCd(CompactDisc cd) {
